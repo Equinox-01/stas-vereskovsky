@@ -1,11 +1,7 @@
 <div class="contact-container container-block">
     <ul class="list-unstyled contact-list">
     <% @resume_service.contacts.each do |contact| %>
-        <% if contact['name'] == 'envelope'%>
-            <li class="<%= contact['name'] %>"><i class="fa fa-<%= contact['name'] %>"></i><a href="<%= 'mailto' + contact['link'] %>"><%= contact['link'] %></a></li>
-        <% else %>
-            <li class="<%= contact['name'] %>"><i class="fab fa-<%= contact['name'] %>"></i><a href="<%= 'https://' + contact['link'] %>"><%= contact['link'] %></a></li>
-        <% end %>
+        <%= ResumeDecorator.render_contact(contact) %>
     <% end %>
     </ul>
 </div>
