@@ -9,6 +9,7 @@ class ApplicationController < Sinatra::Base
   set :views, File.expand_path(File.join(__FILE__, '../../views'))
 
   get '/' do
+    @current_year = Time.new.year
     erb :index
   end
 end
