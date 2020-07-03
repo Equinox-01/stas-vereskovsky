@@ -1,0 +1,147 @@
+{
+  "name":"Stas Vereskovsky",
+  "specialization":"Ruby Developer",
+  "avatar_path":"/assets/images/avatar.jpg",
+  "icon_path":"/assets/icons/ruby_favicon.ico",
+  "contacts":[
+     {
+         "name":"envelope",
+         "link":"vereskovskystas@gmail.com"
+     },
+     {
+         "name":"github",
+         "link":"github.com/Equinox-01"
+     },
+     {
+         "name":"instagram",
+         "link":"instagram.com/equinox__01/"
+     },
+     {
+         "name":"linkedin",
+         "link":"linkedin.com/in/stas-vereskovsky-529136163/"
+     }
+  ],
+  "languages":[
+     {
+        "name":"Russian",
+        "level":"Native"
+     },
+     {
+        "name":"Belarussian",
+        "level":"Native"
+     },
+     {
+        "name":"English",
+        "level":"Intermediate"
+     }
+  ],
+  "interests":[
+     "Sci-Fi",
+     "MMA",
+     "Photography"
+  ],
+  "experiences":[
+     {
+        "position":"Ruby Developer",
+        "time":"February 2019 - July 2020",
+        "company":"Parabox",
+        "location":"Belarus, Minsk",
+        "description":"Backend development with Rails API.<br/>Work with RSpec on the principle of TDD.<br/>Work with rswag"
+     },
+     {
+        "position":"Junior Ruby Developer",
+        "time":"September 2018 - December 2018",
+        "company":"Cybergizer",
+        "location":"Belarus, Minsk",
+        "description":"Configurate CI on GitLab.<br/>Work with RSpec.<br/>Backend development with Rails API.<br/>Frontend development with React Redux"
+     }
+  ],
+  "educations":[
+     {
+        "university":"Belarusian State University of Informatics and Radioelectronics",
+        "time":"2020 - Present",
+        "degree":"Master's Degree",
+        "description":"Software Engineering."
+     },
+     {
+        "university":"Belarusian State University of Informatics and Radioelectronics",
+        "time":"2015 - 2020",
+        "degree":"Bachelor's degree",
+        "description":"Information Technology Software (Software Engineer)."
+     }
+  ],
+  "certificates":[
+     {
+        "name":"Rubizza Training Center Certificate",
+        "time":"September 2018 - Perpetual",
+        "organization":"Rubizza Survival Camp"
+     }
+  ],
+  "projects":[
+     {
+        "name":"Relativity",
+        "time":"February 2020 - Present",
+        "description":"Fitness application on Rails & React.<br/>Diploma project for BSUIR.<br/>CI system used to check RSpec, Brakeman and Rubocop violation.<br/>Used docker containers. <br/>DigitalOcean deployment with Github Action CD"
+     },
+     {
+        "name":"SciFi Battle",
+        "time":"November 2019 - January 2020",
+        "description":"Game on UE4 about Space battles. Based on Star Trek franchise"
+     },
+     {
+        "name":"Webcam Security",
+        "time":"February 2019",
+        "description":"Webcam Security is a ruby application which work with OpenCV and using Telegram-bot for notification."
+     }
+  ],
+  "skills":[
+     {
+        "name":"Ruby on Rails",
+        "level":"9"
+     },
+     {
+        "name":"Git",
+        "level":"9"
+     },
+     {
+        "name":"Javascript",
+        "level":"7"
+     },
+     {
+        "name":"React",
+        "level":"7"
+     },
+     {
+        "name":"HTML & CSS",
+        "level":"7"
+     },
+     {
+        "name":"Docker",
+        "level":"8"
+     },
+     {
+        "name":"SQL",
+        "level":"8"
+     },
+     {
+        "name":"C#",
+        "level":"8"
+     },
+     {
+        "name":"PHP",
+        "level":"6"
+     },
+     {
+        "name":"C++",
+        "level":"8"
+     },
+     {
+        "name":"WinAPI",
+        "level":"9"
+     },
+     {
+        "name":"Photoshop & Pixelmator",
+        "level":"8"
+     }
+  ]
+}

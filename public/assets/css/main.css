@@ -358,3 +358,9 @@ p {
   margin-bottom: 0;
   font-weight: 500;
 }
+
+.looking-for-job {
+  color: #006fca;
+  text-align: center;
+  margin-bottom: 30px;
+}
