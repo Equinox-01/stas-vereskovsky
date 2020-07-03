@@ -1,0 +1,8 @@
+<div class="languages-container container-block">
+    <h2 class="container-block-title">Languages</h2>
+    <ul class="list-unstyled interests-list">
+    <% @resume_service.languages.each do |lang| %>
+        <li><%= lang['name']%> <span class="lang-desc">(<%= lang['level']%>)</span></li>
+    <% end %>
+    </ul>
+</div>

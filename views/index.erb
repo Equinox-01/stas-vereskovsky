@@ -1,145 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title><%= @resume_service.name %> - <%= @resume_service.specialization %></title>
-    <!-- Meta -->
-    <meta charset="utf-8">
-    <meta name="description" content="<%= @resume_service.name %> resume (<%= @resume_service.specialization %>)">
-    <meta name="author" content="Stas Vereskovsky">
-    <!-- Google Font -->
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-    <!-- FontAwesome JS-->
-	<script defer src="/assets/fontawesome/js/all.min.js"></script>
-    <!-- Global CSS -->
-    <link rel="stylesheet" href="/assets/plugins/bootstrap/css/bootstrap.min.css">   
-    <!-- Theme CSS -->  
-    <link id="theme-style" rel="stylesheet" href="/assets/css/main.css">
-    <link rel="icon" href=<%= @resume_service.icon_path %>>
-</head> 
-
-<body>
-    <div class="wrapper">
-        <div class="sidebar-wrapper">
-            <div class="profile-container">
-                <img style="width:100px;height:100px;" src=<%= @resume_service.avatar_path %> class="rounded-circle">
-                <h1 class="name"><%= @resume_service.name %></h1>
-                <h3 class="tagline"><%= @resume_service.specialization %></h3>
-            </div><!--//profile-container-->
-            <div class="contact-container container-block">
-                <ul class="list-unstyled contact-list">
-                <% @resume_service.contacts.each do |contact| %>
-                    <% if contact['name'] == 'envelope'%>
-                        <li class="<%= contact['name'] %>"><i class="fa fa-<%= contact['name'] %>"></i><a href="<%= 'mailto' + contact['link'] %>"><%= contact['link'] %></a></li>
-                    <% else %>
-                        <li class="<%= contact['name'] %>"><i class="fab fa-<%= contact['name'] %>"></i><a href="<%= 'https://' + contact['link'] %>"><%= contact['link'] %></a></li>
-                    <% end %>
-                <% end %>
-                </ul>
-            </div><!--//contact-container-->
-            <div class="languages-container container-block">
-                <h2 class="container-block-title">Languages</h2>
-                <ul class="list-unstyled interests-list">
-                <% @resume_service.languages.each do |lang| %>
-                    <li><%= lang['name']%> <span class="lang-desc">(<%= lang['level']%>)</span></li>
-                <% end %>
-                </ul>
-            </div><!--//interests-->
-            <div class="interests-container container-block">
-                <h2 class="container-block-title">Interests</h2>
-                <ul class="list-unstyled interests-list">
-                <% @resume_service.interests.each do |interest|%>
-                    <li><%= interest %></li>
-                <% end %>
-                </ul>
-            </div><!--//interests-->
-        </div><!--//sidebar-wrapper-->
-        <div class="main-wrapper">
-            <section class="section experiences-section">
-                <h2 class="section-title"><span class="icon-holder"><i class="fas fa-briefcase"></i></span>Experiences</h2>
-                <%= "<h4 class=\"looking-for-job\">Looking for new opportunities</h4>" unless @resume_service.experiences.any? { |experience| experience['time'].include?('Present') } %>
-                <% @resume_service.experiences.each do |experience|%>
-                    <div class="item">
-                        <div class="meta">
-                            <div class="upper-row">
-                                <h3 class="job-title"><%= experience['position']%></h3>
-                                <div class="time"><%= experience['time']%></div>
-                            </div><!--//upper-row-->
-                            <div class="company"><%= experience['company']%><br/><%= experience['location']%></div>
-                        </div><!--//meta-->
-                        <div class="details">
-                            <%= experience['description']%>
-                        </div><!--//details-->
-                    </div><!--//item-->
-                <% end %>
-            </section><!--//section-->
-            <section class="section education-section">
-                <h2 class="section-title"><span class="icon-holder"><i class="fa fa-university"></i></span>Education</h2>
-                <% @resume_service.educations.each do |education|%>
-                    <div class="item">
-                        <div class="meta">
-                            <div class="upper-row">
-                                <h3 class="university-title"><%= education['university']%></h3>
-                                <div class="time"><%= education['time']%></div>
-                            </div><!--//upper-row-->
-                            <div class="degree"><%= education['degree']%></div>
-                        </div><!--//meta-->
-                        <div class="details">
-                            <p><%= education['description']%></p>
-                        </div><!--//details-->
-                    </div><!--//item-->
-                <% end %>
-            </section><!--//section-->
-            <section class="section certificates-section">
-                <h2 class="section-title"><span class="icon-holder"><i class="fas fa-book"></i></span>Certificates</h2>
-                <% @resume_service.certificates.each do |certificate|%>
-                    <div class="item">
-                        <div class="meta">
-                            <div class="upper-row">
-                                <h3 class="courses-title"><%= certificate['name']%></h3>
-                                <div class="time"><%= certificate['time']%></div>
-                            </div><!--//upper-row-->
-                            <div class="company"><%= certificate['organization']%></div>
-                        </div><!--//meta-->
-                    </div><!--//item-->
-                <% end %>
-            </section><!--//section-->
-            <section class="section projects-section">
-                <h2 class="section-title"><span class="icon-holder"><i class="fas fa-archive"></i></span>Projects</h2>
-                <% @resume_service.projects.each do |project|%>
-                    <div class="item">
-                        <div class="upper-row">
-                            <span class="project-title"><b><%= project['name']%></b></span>
-                            <br/>
-                            <span class="project-tagline">
-                                <%= project['description']%>
-                            </span>
-                            <div class="time"><%= project['time']%></div>
-                        </div><!--//upper-row-->
-                    </div><!--//item-->
-                <% end %>
-            </section><!--//section-->
-            <section class="skills-section section">
-                <h2 class="section-title"><span class="icon-holder"><i class="fas fa-rocket"></i></span>Skills & Proficiency</h2>
-                <div class="skillset"> 
-                    <% @resume_service.skills.each do |skill|%>       
-                        <div class="item">
-                            <h3 class="level-title"><%= skill['name']%></h3>
-                            <div class="progress level-bar">
-                                <div class="progress-bar theme-progress-bar" role="progressbar" style="width: <%= skill['level']%>0%" aria-valuenow="<%= skill['level']%>" aria-valuemin="0" aria-valuemax="10"></div>
-                            </div>                               
-                        </div><!--//item-->
-                    <% end %>
-                </div>  
-            </section><!--//skills-section-->
-        </div><!--//main-body-->
-    </div>
-    <footer class="footer">
-        <div class="text-center">
-            <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
-            <small class="copyright">Designed with <i class="fas fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
-            <br/>
-            <small class="copyright">Extended for personal purposes by <a>Stas Vereskovsky</a></small>
-        </div><!--//container-->
-    </footer><!--//footer-->
-</body>
+    <%= erb :_head %>
+    <body>
+        <div class="wrapper">
+            <div class="sidebar-wrapper">
+                <%= erb :_main_info %>
+                <%= erb :_contacts %>
+                <%= erb :_languages %>
+                <%= erb :_interests %>
+            </div>
+            <div class="main-wrapper">
+                <%= erb :_experiences %>
+                <%= erb :_education %>
+                <%= erb :_certificates %>
+                <%= erb :_projects %>
+                <%= erb :_skills %>
+            </div>
+        </div>
+        <%= erb :_footer %>
+    </body>
 </html> 

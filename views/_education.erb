@@ -1,0 +1,17 @@
+<section class="section education-section">
+    <h2 class="section-title"><span class="icon-holder"><i class="fa fa-university"></i></span>Education</h2>
+    <% @resume_service.educations.each do |education|%>
+        <div class="item">
+            <div class="meta">
+                <div class="upper-row">
+                    <h3 class="university-title"><%= education['university']%></h3>
+                    <div class="time"><%= education['time']%></div>
+                </div>
+                <div class="degree"><%= education['degree']%></div>
+            </div>
+            <div class="details">
+                <p><%= education['description']%></p>
+            </div>
+        </div>
+    <% end %>
+</section>
