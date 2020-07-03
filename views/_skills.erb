@@ -1,13 +1,13 @@
 <section class="skills-section section">
-    <h2 class="section-title"><span class="icon-holder"><i class="fas fa-rocket"></i></span>Skills & Proficiency</h2>
-    <div class="skillset"> 
-        <% @resume_service.skills.each do |skill|%>       
-            <div class="item">
-                <h3 class="level-title"><%= skill['name']%></h3>
-                <div class="progress level-bar">
-                    <div class="progress-bar theme-progress-bar" role="progressbar" style="width: <%= skill['level']%>0%" aria-valuenow="<%= skill['level']%>" aria-valuemin="0" aria-valuemax="10"></div>
-                </div>                               
-            </div>
-        <% end %>
-    </div>  
+   <h2 class="section-title"><span class="icon-holder"><i class="fas fa-rocket"></i></span>Skills & Proficiency</h2>
+   <div class="skillset">
+      <% @resume_service.skills.each do |skill|%>       
+      <div class="item">
+         <h3 class="level-title"><%= skill['name']%></h3>
+         <div class="progress level-bar">
+            <div class="progress-bar theme-progress-bar" role="progressbar" style="width: <%= skill['level']%>0%" aria-valuenow="<%= skill['level']%>" aria-valuemin="0" aria-valuemax="10"></div>
+         </div>
+      </div>
+      <% end %>
+   </div>
 </section>

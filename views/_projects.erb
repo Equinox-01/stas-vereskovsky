@@ -1,15 +1,15 @@
 <section class="section projects-section">
-    <h2 class="section-title"><span class="icon-holder"><i class="fas fa-archive"></i></span>Projects</h2>
-    <% @resume_service.projects.each do |project|%>
-        <div class="item">
-            <div class="upper-row">
-                <span class="project-title"><b><%= project['name']%></b></span>
-                <br/>
-                <span class="project-tagline">
-                    <%= project['description']%>
-                </span>
-                <div class="time"><%= project['time']%></div>
-            </div>
-        </div>
-    <% end %>
+   <h2 class="section-title"><span class="icon-holder"><i class="fas fa-archive"></i></span>Projects</h2>
+   <% @resume_service.projects.each do |project|%>
+   <div class="item">
+      <div class="upper-row">
+         <span class="project-title"><b><%= project['name']%></b></span>
+         <br/>
+         <span class="project-tagline">
+         <%= project['description']%>
+         </span>
+         <div class="time"><%= project['time']%></div>
+      </div>
+   </div>
+   <% end %>
 </section>

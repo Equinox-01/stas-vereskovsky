@@ -11,11 +11,11 @@ class ApplicationController < Sinatra::Base
 
   get '/' do
     @current_year = Time.new.year
-    # begin
+    begin
       @resume_service = ResumeService.new
       erb :index
-    # rescue StandardError
-    #   status :not_found
-    # end
+    rescue StandardError
+      status :not_found
+    end
   end
 end

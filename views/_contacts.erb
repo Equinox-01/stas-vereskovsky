@@ -1,7 +1,7 @@
 <div class="contact-container container-block">
-    <ul class="list-unstyled contact-list">
-    <% @resume_service.contacts.each do |contact| %>
-        <%= ResumeDecorator.render_contact(contact) %>
-    <% end %>
-    </ul>
+   <ul class="list-unstyled contact-list">
+      <% @resume_service.contacts.each do |contact| %>
+      <%= ResumeDecorator.render_contact(contact) %>
+      <% end %>
+   </ul>
 </div>
