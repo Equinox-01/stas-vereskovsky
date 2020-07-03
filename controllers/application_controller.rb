@@ -3,6 +3,7 @@
 require 'uri'
 require 'net/https'
 require 'net/http'
+require 'json'
 
 class ApplicationController < Sinatra::Base
   set :public_folder, 'public'
@@ -10,6 +11,11 @@ class ApplicationController < Sinatra::Base
 
   get '/' do
     @current_year = Time.new.year
-    erb :index
+    begin
+      @resume_service = ResumeService.new
+      erb :index
+    rescue StandardError
+      status :not_found
+    end
   end
 end

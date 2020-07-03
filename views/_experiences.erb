@@ -1,0 +1,21 @@
+<section class="section experiences-section">
+   <h2 class="section-title"><span class="icon-holder"><i class="fas fa-briefcase"></i></span>Experiences</h2>
+   <%= "<h4 class=\"looking-for-job\">Looking for new opportunities</h4>" if ResumeDecorator.looking_for_job?(@resume_service.experiences) %>
+   <% @resume_service.experiences.each do |experience|%>
+   <div class="item">
+      <div class="meta">
+         <div class="upper-row">
+            <h3 class="job-title"><%= experience['position']%></h3>
+            <div class="time"><%= experience['time']%></div>
+         </div>
+         <div class="company"><%= experience['company']%>
+            <br/>
+            <%= experience['location']%>
+         </div>
+      </div>
+      <div class="details">
+         <%= experience['description']%>
+      </div>
+   </div>
+   <% end %>
+</section>
