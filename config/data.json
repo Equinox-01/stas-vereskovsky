@@ -46,14 +46,14 @@
         "time":"February 2019 - July 2020",
         "company":"Parabox",
         "location":"Belarus, Minsk",
-        "description":"Backend development with Rails API.<br/>Work with RSpec on the principle of TDD.<br/>Work with rswag"
+        "description":"Back-end development with Rails API.<br/>Work with RSpec on the principle of TDD.<br/>Work with rswag"
      },
      {
         "position":"Junior Ruby Developer",
         "time":"September 2018 - December 2018",
         "company":"Cybergizer",
         "location":"Belarus, Minsk",
-        "description":"Configurate CI on GitLab.<br/>Work with RSpec.<br/>Backend development with Rails API.<br/>Frontend development with React Redux"
+        "description":"Configure CI on GitLab.<br/>Work with RSpec.<br/>Back-end development with Rails API.<br/>Frontend development with React Redux"
      }
   ],
   "educations":[
@@ -91,7 +91,7 @@
      {
         "name":"Webcam Security",
         "time":"February 2019",
-        "description":"Webcam Security is a ruby application which work with OpenCV and using Telegram-bot for notification."
+        "description":"Webcam Security is a Ruby application which works with OpenCV and uses Telegram-bot for notifications."
      }
   ],
   "skills":[
@@ -133,11 +133,11 @@
      },
      {
         "name":"C++",
-        "level":"8"
+        "level":"7"
      },
      {
         "name":"WinAPI",
-        "level":"9"
+        "level":"7"
      },
      {
         "name":"Photoshop & Pixelmator",

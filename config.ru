@@ -2,7 +2,6 @@
 
 $LOAD_PATH.unshift File.expand_path(__dir__)
 require 'sinatra/base'
-require 'dotenv/load'
 
 Dir['./services/*.rb'].sort.each { |file| require file }
 Dir['./validators/*.rb'].sort.each { |file| require file }
