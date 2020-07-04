@@ -1,7 +1,12 @@
 class ResumeService
+
   def initialize(data_path = 'config/data.json')
     parse_file(data_path)
     create_methods
+  end
+
+  def keys
+    @data.keys
   end
 
   private
