@@ -364,3 +364,9 @@ p {
   text-align: center;
   margin-bottom: 30px;
 }
+
+.empty-section {
+  color: #006fca;
+  text-align: center;
+  margin-bottom: 30px;
+}

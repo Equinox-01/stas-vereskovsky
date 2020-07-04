@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class ResumeValidator
-  REQUIRED_FIELDS = ['name', 'specialization', 'avatar_path']
-  CORRECT_RANGE = (0..10)
+  REQUIRED_FIELDS = %w[name specialization avatar_path].freeze
+  CORRECT_RANGE = (0..10).freeze
 
   def initialize(resume)
     @resume = resume
