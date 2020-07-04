@@ -1,14 +1,16 @@
-<section class="section certificates-section">
+<% if !@resume_service.certificates.empty? %>
+   <section class="section certificates-section">
    <h2 class="section-title"><span class="icon-holder"><i class="fas fa-book"></i></span>Certificates</h2>
    <% @resume_service.certificates.each do |certificate|%>
-   <div class="item">
-      <div class="meta">
-         <div class="upper-row">
-            <h3 class="courses-title"><%= certificate['name']%></h3>
-            <div class="time"><%= certificate['time']%></div>
+      <div class="item">
+         <div class="meta">
+            <div class="upper-row">
+               <h3 class="courses-title"><%= certificate['name']%></h3>
+               <div class="time"><%= certificate['time']%></div>
+            </div>
+            <div class="company"><%= certificate['organization']%></div>
          </div>
-         <div class="company"><%= certificate['organization']%></div>
       </div>
-   </div>
    <% end %>
-</section>
+   </section>
+<% end %>

@@ -13,9 +13,15 @@ class ApplicationController < Sinatra::Base
     @current_year = Time.new.year
     begin
       @resume_service = ResumeService.new
+      unless ResumeValidator.new(@resume_service).valid?
+        status :bad_request
+        body 'One or more fields in JSON-file is invalid'
+      end
+
       erb :index
     rescue StandardError
-      status :not_found
+      status :bad_request
+      body 'Damaged JSON-file'
     end
   end
 end

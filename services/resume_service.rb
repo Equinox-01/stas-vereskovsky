@@ -4,6 +4,10 @@ class ResumeService
     create_methods
   end
 
+  def keys
+    @data.keys
+  end
+
   private
 
   def create_methods
