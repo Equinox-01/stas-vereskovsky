@@ -43,6 +43,12 @@
   "experiences":[
      {
         "position":"Ruby Developer",
+        "time":"August 2020 - Present",
+        "company":"Itransition",
+        "location":"Belarus, Minsk"
+     },
+     {
+        "position":"Ruby Developer",
         "time":"February 2019 - July 2020",
         "company":"Parabox",
         "location":"Belarus, Minsk",
