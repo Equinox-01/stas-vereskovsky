@@ -10,6 +10,15 @@ class ApplicationController < Sinatra::Base
   set :public_folder, 'public'
   set :views, File.expand_path(File.join(__FILE__, '../../views'))
 
+  configure do
+    enable :logging
+  end
+
+  before do
+    logger.datetime_format = "%Y/%m/%d @ %H:%M:%S "
+    logger.level = Logger::ERROR
+  end
+
   get '/' do
     begin
       @resume_service = ResumeService.new
@@ -17,7 +26,7 @@ class ApplicationController < Sinatra::Base
 
       unless ResumeValidator.new(@resume_service).valid?
         status :bad_request
-        Rails.logger.error 'Validation error'
+        logger.error 'Validation error'
         body 'Unexpected error. Please try again'
       end
 
@@ -25,7 +34,7 @@ class ApplicationController < Sinatra::Base
       erb :index
     rescue StandardError
       status :bad_request
-      Rails.logger.error 'Damaged JSON-file'
+      logger.error 'Damaged JSON-file'
     end
   end
 end

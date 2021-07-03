@@ -21,10 +21,10 @@ class MailerService
                   }
         puts report
         rescue => e
-          Rails.logger.error e
+          logger.error e
         end
       else
-        puts 'Critical error: No credentials for mailer'
+        logger.error 'Critical error: No credentials for mailer'
       end
     end
   end
