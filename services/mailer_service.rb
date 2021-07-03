@@ -6,6 +6,7 @@ class MailerService
   class << self
     def send_notification(report)
       if ENV['USER_NAME'] && ENV['PASS'] && ENV['DESTINATION']
+        begin
         Pony.mail to: ENV['DESTINATION'],
                   from: ENV['USER_NAME'],
                   subject: 'CV Notification',
@@ -19,6 +20,9 @@ class MailerService
                     authentication: :plain
                   }
         puts report
+        rescue => e
+          Rails.logger.error e
+        end
       else
         puts 'Critical error: No credentials for mailer'
       end
