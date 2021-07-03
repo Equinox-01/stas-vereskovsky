@@ -17,14 +17,15 @@ class ApplicationController < Sinatra::Base
 
       unless ResumeValidator.new(@resume_service).valid?
         status :bad_request
-        body 'One or more fields in JSON-file is invalid'
+        Rails.logger.error 'Validation error'
+        body 'Unexpected error. Please try again'
       end
 
       MailerService.send_notification(analyzer.report)
       erb :index
     rescue StandardError
       status :bad_request
-      body 'Damaged JSON-file'
+      Rails.logger.error 'Damaged JSON-file'
     end
   end
 end
