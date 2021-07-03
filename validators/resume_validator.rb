@@ -13,7 +13,7 @@ class ResumeValidator
   end
 
   def required_data_valid?
-    @resume.keys.include?(REQUIRED_FIELDS)
+    (@resume.keys & REQUIRED_FIELDS).any?
   end
 
   def level_in_correct_range?
